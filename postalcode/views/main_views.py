@@ -26,12 +26,13 @@ def select():
     data = request.args.get('input_pc')
     print(data)
 
-    # distinct : 중복 데이터 제거
-    sql = "SELECT DISTINCT postalcode FROM postalcode_db.postalcode WHERE MATCH(postalcode) AGAINST(" + str(data) + " IN BOOLEAN MODE) LIMIT 10"
-    row = db_class.executeAll(sql)
-
+    if data != '':
+        # distinct : 중복 데이터 제거
+        sql = "SELECT DISTINCT postalcode FROM postalcode_db.postalcode WHERE MATCH(postalcode) AGAINST(" + str(data) + " IN BOOLEAN MODE) LIMIT 10"
+        row = db_class.executeAll(sql)
+    else:
+        row = {'postalcode':''}
     return jsonify(row)
-    return data
 
 @bp.route('/testbody', methods=['GET'])
 def testBody():
