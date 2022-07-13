@@ -23,9 +23,6 @@ function auto_Complete() {
             tag += '<li><svg class="submit-button"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>\n' +
                     '</svg><p>' + posList + '</p></li>';
           }
-          else{
-
-          }
         });
         $(".searchList").append(tag);
       },
