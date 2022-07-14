@@ -58,8 +58,8 @@
 .searchList li{
   display: block;
   position: relative;
-  padding-top: 5px;
-  width: 450px;
+  padding-top: 6px;
+  width: 440px;
   height: 35px;
   font-family: 'Malgun Gothic';
   font-size: 14px;
@@ -67,6 +67,8 @@
   line-height: 1.5;
   letter-spacing: -1px;
   vertical-align: top;
+  border-bottom: 1px solid #d0d5d6;
 }
+.searchList li:last-child{border-bottom: 0px;}
 .searchList li p:hover,
 .searchList li p.on{background:#cbd1d4}
