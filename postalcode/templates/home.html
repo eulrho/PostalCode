@@ -3,7 +3,7 @@
 <script>
   $(document).ready(function(){
     $('#search-input').keyup(delay(function (){
-        if ($('#search-input').val() != ''){ auto_Complete() }
+        if ($('#search-input').val() != ''){ openSearchList(), auto_Complete() }
         else { closeSearchList() }
     }, 500));
 })
