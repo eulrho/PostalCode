@@ -2,12 +2,14 @@
 {% block content %}
 <script>
   $(document).ready(function(){
-    $('#search-input').keyup(function (){
+    $('#search-input').keyup(delay(function (){
         if ($('#search-input').val() != ''){
           auto_Complete()
         }
-        closeSearchList()
-    })
+        else{
+          closeSearchList()
+        }
+    }, 500));
 })
 </script>
 <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
