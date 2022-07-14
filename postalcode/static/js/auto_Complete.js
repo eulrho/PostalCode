@@ -1,28 +1,27 @@
 function auto_Complete() {
     let inputValue = $('#search-input').val();
     inputValue = String(inputValue);
-    let postalcode = {input_pc:inputValue};   // test
-    console.log(postalcode)
+    let address = {searchAddress:inputValue};   // test
+    console.log(address)
     // ajax
     $.ajax({
       method: 'GET',
       url: 'http://localhost:5000/ajax',
       datatype: "json",
       // stringify : json 객체 -> string 객체
-      data: postalcode,
+      data: address,
       contentType: "application/json",
       success: function(result){
         console.log(result)
         let tag ="";
         // 자동완성 단어 리스트
         $.each(result, function (key, value){
-          let posList = value.postalcode
-          console.log(posList)
+          let posList = value.postalcode, sidoList = value.sido, sigunguList = value.sigungu;
+          let doroList = value.doro, bno1List = value.buildno1, bno2List = value.buildno2;
+          let bnameList = value.buildname;
+          console.log(posList, sidoList, sigunguList, doroList, bno1List, bno2List, bnameList)
           $(".searchList").empty();
-          if(posList != ''){
-            tag += '<li><svg class="submit-button"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>\n' +
-                    '</svg><p>' + posList + '</p></li>';
-          }
+          tag += '<li><p>'+'('+posList+') '+sidoList+' '+sigunguList+' '+doroList+' '+bno1List+' '+bno2List+' '+bnameList+'</p></li>';
         });
         $(".searchList").append(tag);
       },
