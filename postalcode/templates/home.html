@@ -3,12 +3,8 @@
 <script>
   $(document).ready(function(){
     $('#search-input').keyup(delay(function (){
-        if ($('#search-input').val() != ''){
-          auto_Complete()
-        }
-        else{
-          closeSearchList()
-        }
+        if ($('#search-input').val() != ''){ auto_Complete() }
+        else { closeSearchList() }
     }, 500));
 })
 </script>

@@ -48,7 +48,9 @@
 .searchList{
   position: relative;
   top: 80%;
-  padding: 10px;
+  border: 10px;
+  padding-top: 5px;
+  /*margin-top: 5px;*/
   border-radius: 3px;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
   background: #fff;
@@ -67,39 +69,9 @@
   letter-spacing: -1px;
   vertical-align: top;
 }
-.searchList li svg {
-  position: absolute;
-  padding-top: 5px;
-  margin-left: 2px;
-  width: 20px;
-  height: 25px;
-  fill: #5a6674;
-}
+
 .searchList li p {
   padding-left: 30px;
 }
-
-/*.searchList{*/
-/*  display:inline-block;*/
-/*  position:relative;*/
-/*  width:241px;*/
-/*  margin-top:5px;*/
-/*  font-family:Dotum;*/
-/*  vertical-align:top*/
-/*}*/
-/*.searchList li{*/
-/*  display:block;*/
-/*  position:relative;*/
-/*  width:241px;*/
-/*  font-size:12px}*/
-/*.searchList li p{*/
-/*  display:block;*/
-/*  width:194px;*/
-/*  height:23px;*/
-/*  padding-left:47px;*/
-/*  color:#727272;*/
-/*  line-height:1.9;*/
-/*  vertical-align:top*/
-/*}*/
-/*.srch_location .srch_wp .srch_box .srch_lst li a:hover,*/
-/*.srch_location .srch_wp .srch_box .srch_lst li a.on{background:#ffe8e8}*/
+.searchList li p:hover,
+.searchList li p.on{background:#cbd1d4}
