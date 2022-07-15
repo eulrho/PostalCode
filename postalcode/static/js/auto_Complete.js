@@ -1,12 +1,12 @@
 function auto_Complete() {
     let inputValue = $('#search-input').val();
     inputValue = String(inputValue);
-    let address = {searchAddress:inputValue};   // test
+    let address = {srchAddress:inputValue};   // test
     console.log(address)
     // ajax
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:5000/ajax',
+      url: 'http://localhost:5000/search',
       datatype: "json",
       // stringify : json 객체 -> string 객체
       data: address,

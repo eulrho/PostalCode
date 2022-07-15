@@ -15,13 +15,13 @@ def home():
     return render_template('home.html')
 
 
-@bp.route('/ajax', methods=['GET'])
+@bp.route('/search', methods=['GET'])
 def select():
     # request.on_json_loading_failed 와 연결
     request.on_json_loading_failed = on_json_loading_failed_return_dict
 
     db_class = Database()
-    data = request.args.get('searchAddress')
+    data = request.args.get('srchAddress')
     print(data)
 
     if data != '':
