@@ -47,7 +47,8 @@
 }
 .searchList{
   position: relative;
-  top: 80%;
+  top: 70%;
+  margin-top: 5px;
   border: 10px;
   border-radius: 3px;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
@@ -59,7 +60,7 @@
   display: block;
   position: relative;
   padding-top: 6px;
-  width: 440px;
+  width: 450px;
   height: 35px;
   font-family: 'Malgun Gothic';
   font-size: 14px;
@@ -69,6 +70,7 @@
   vertical-align: top;
   border-bottom: 1px solid #d0d5d6;
 }
+.searchList li:first-child{margin-top: 5px;}
 .searchList li:last-child{border-bottom: 0px;}
 .searchList li p:hover,
 .searchList li p.on{background:#cbd1d4}
