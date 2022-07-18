@@ -1,5 +1,10 @@
 {% extends "home.html" %}
 {% block content2 %}
+<script>
+    $(document).ready(function(){
+        closeSearchForm()
+    });
+</script>
 <div class="result">
     <p>{{res.address}}</p>
 </div>

@@ -2,6 +2,10 @@
     $(".searchList").css({ display: "none" });
   }
 
-    function openSearchList() {
+  function openSearchList() {
     $(".searchList").css({ display: "" });
+  }
+
+  function closeSearchForm() {
+    $(".search-form").css({ display: "none" });
   }
