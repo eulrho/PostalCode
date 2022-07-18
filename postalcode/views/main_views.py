@@ -33,9 +33,10 @@ def select():
 
 @bp.route('/result', methods=['GET','POST'])
 def result():
-    result = request.form
-    print(result)
-    return render_template('address.html', res=result)
+    if request.method == 'POST':
+        result = request.form
+        print(result)
+        return render_template('address.html', res=result)
 
 # test
 @bp.route('/testbody', methods=['GET'])

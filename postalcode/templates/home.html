@@ -18,7 +18,7 @@
           });
         });}
         else { closeSearchList(); }
-    }, 450));
+    }, 500));
   });
 
 </script>
@@ -42,7 +42,7 @@
   <span>P</span><span>o</span><span>s</span><span>t</span><span>a</span><span>l</span>
   <span>C</span><span>o</span><span>d</span><span>e</span>
 </h1>
-<form class="search-form" method="POST">
+<form action = "http://localhost:5000/result" class="search-form" method="POST">
   <input type="text" placeholder="Search" id="search-input" name="address">
   <button type="submit" class="search-button">
     <svg class="submit-button">
