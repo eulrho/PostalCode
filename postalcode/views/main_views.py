@@ -10,7 +10,7 @@ def on_json_loading_failed_return_dict(e):
     return {}
 
 
-@bp.route('/', methods=['GET'])  # 라우팅 함수
+@bp.route('/')  # 라우팅 함수
 def home():
     return render_template('home.html')
 
@@ -22,7 +22,6 @@ def select():
 
     db_class = Database()
     data = request.args.get('srchAddress')
-    print(data)
 
     if data != '':
         # distinct : 중복 데이터 제거
@@ -31,6 +30,12 @@ def select():
         sql = 'SELECT DISTINCT * FROM postalcode_db.postalcode WHERE MATCH(sido, sigungu, doro, buildno1, buildno2, buildname) AGAINST("' + str(data) + '") LIMIT 7'
         row = db_class.executeAll(sql)
     return jsonify(row)
+
+@bp.route('/result', methods=['GET','POST'])
+def result():
+    result = request.form
+    print(result)
+    return render_template('address.html', res=result)
 
 # test
 @bp.route('/testbody', methods=['GET'])

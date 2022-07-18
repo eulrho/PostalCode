@@ -1,4 +1,4 @@
-function auto_Complete() {
+function auto_Complete(callback) {
     let inputValue = $('#search-input').val();
     inputValue = String(inputValue);
     let address = {srchAddress:inputValue};   // test
@@ -30,4 +30,5 @@ function auto_Complete() {
         alert(error);   // error 메세지
       }
     })
+    callback();
   }
