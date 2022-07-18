@@ -11,9 +11,7 @@
             address.addEventListener('click', (event) => {
               const getValue = event.target.textContent;   //Text
               console.log(getValue);
-              $("#search-input").val(getValue);
-              var inputValue = $("#search-input").val()
-              console.log(inputValue)
+              getValue.submit();
               closeSearchList();
           });
         });}
