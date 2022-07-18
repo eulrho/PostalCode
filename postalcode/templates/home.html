@@ -1,12 +1,26 @@
 {% extends "layout.html" %}
-{% block content %}
+{% block content1 %}
 <script>
   $(document).ready(function(){
-    $('#search-input').keyup(delay(function (){
-        if ($('#search-input').val() != ''){ openSearchList(), auto_Complete() }
-        else { closeSearchList() }
-    }, 500));
-})
+    $('#search-input').keyup(delay(async function (){
+        if ($('#search-input').val() != ''){ openSearchList(); await auto_Complete();
+          let addressList = document.getElementsByClassName("address");
+          console.log(addressList)
+          addressList.forEach((address, index) => {
+            console.log('pList forEach index: '+index);
+            address.addEventListener('click', (event) => {
+              const getValue = event.target.textContent;   //Text
+              console.log(getValue);
+              $("#search-input").val(getValue);
+              var inputValue = $("#search-input").val()
+              console.log(inputValue)
+              closeSearchList();
+          });
+        });}
+        else { closeSearchList(); }
+    }, 450));
+  });
+
 </script>
 <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
   <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
@@ -29,7 +43,7 @@
   <span>C</span><span>o</span><span>d</span><span>e</span>
 </h1>
 <form class="search-form" method="POST">
-  <input type="text" placeholder="Search" id="search-input" name="postalcode">
+  <input type="text" placeholder="Search" id="search-input" name="address">
   <button type="submit" class="search-button">
     <svg class="submit-button">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
@@ -43,4 +57,6 @@
     <path d="M 19.5 3 C 14.26514 3 10 7.2651394 10 12.5 C 10 14.749977 10.810825 16.807458 12.125 18.4375 L 3.28125 27.28125 L 4.71875 28.71875 L 13.5625 19.875 C 15.192542 21.189175 17.250023 22 19.5 22 C 24.73486 22 29 17.73486 29 12.5 C 29 7.2651394 24.73486 3 19.5 3 z M 19.5 5 C 23.65398 5 27 8.3460198 27 12.5 C 27 16.65398 23.65398 20 19.5 20 C 15.34602 20 12 16.65398 12 12.5 C 12 8.3460198 15.34602 5 19.5 5 z" />
   </symbol>
 </svg>
+{% block content2 %}
+{% endblock %}
 {% endblock %}
