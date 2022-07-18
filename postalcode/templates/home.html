@@ -4,9 +4,9 @@
   $(document).ready(function(){
     $('#search-input').keyup(delay(async function (){
         if ($('#search-input').val() != ''){ openSearchList(); await auto_Complete();
-          let addressList = document.getElementsByClassName("address");
-          console.log(addressList)
-          addressList.forEach((address, index) => {
+          let addressList = await document.getElementsByClassName("address");
+          console.log(addressList);
+          Array.from(addressList).forEach((address, index) => {
             console.log('pList forEach index: '+index);
             address.addEventListener('click', (event) => {
               const getValue = event.target.textContent;   //Text
