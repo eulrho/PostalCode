@@ -9,3 +9,7 @@
   function closeSearchForm() {
     $(".search-form").css({ display: "none" });
   }
+
+  function closeSearchInput() {
+    $("#search-input").css({ display: "none" });
+  }
