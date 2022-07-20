@@ -21,9 +21,11 @@ function auto_Complete() {
           let bnameList = value.buildname;
           console.log(posList, sidoList, sigunguList, doroList, bno1List, bno2List, bnameList)
           $(".searchList").empty();
-          tag += '<li><p class="address">'+'('+posList+') '+sidoList+' '+sigunguList+' '+doroList+' '+bno1List+' '+bno2List+' '+bnameList+'</p></li>';
+          tag += '<li><p class="address">'+'('+posList+') '+sidoList+' '+sigunguList+' '+doroList+' '+bno1List+'-'+bno2List+' '+bnameList+'</p></li>';
         });
+        console.time('append p tag')
         $(".searchList").append(tag);
+        console.timeEnd('append p tag')
       },
       error: function (request, status, error){
         alert("ajax fail");

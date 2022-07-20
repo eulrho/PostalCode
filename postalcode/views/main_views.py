@@ -27,7 +27,7 @@ def select():
         # distinct : 중복 데이터 제거
         # 불린 모드 시 특정 한 컬럼에 있는 data만 인식(ex. 경상남도 창원시는 sido와 sigungu data를 합한 것이므로 검색x)하므로 자연어 모드 사용
         # 검색어에 ""를 씌워 한 덩어리로 묶음
-        sql = 'SELECT DISTINCT * FROM postalcode_db.postalcode WHERE MATCH(sido, sigungu, doro, buildno1, buildno2, buildname) AGAINST("' + str(data) + '") LIMIT 7'
+        sql = 'SELECT DISTINCT * FROM postalcode_db.postalcode WHERE MATCH(searchColumn) AGAINST("' + str(data) + '") LIMIT 7'
         row = db_class.executeAll(sql)
     return jsonify(row)
 
