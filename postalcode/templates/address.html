@@ -1,11 +1,12 @@
 {% extends "home.html" %}
 {% block content2 %}
 <script>
-    $(document).ready(function(){
+    document.addEventListener("DOMContentLoaded", () => {
         closeSearchForm()
     });
 </script>
 <div class="result">
+    <p>Select Address</p>
     <p>{{res.address}}</p>
 </div>
 {% endblock %}
